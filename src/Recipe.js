@@ -18,17 +18,17 @@ const Recipe = ({ title, calories, image, ingredients }) => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345, display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
         <CardHeader title={title} subheader={`Calories : ${calories.toFixed(2)}`} />
         <CardMedia component="img" height="194" image={image} alt={title} />
 
-        <CardActions disableSpacing style={{display: "flex",justifyContent: "space-between",alignItems: "center"}}>
+        <CardActions disableSpacing style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div>Ingredients</div>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
-            style={{cursor:"pointer"}} 
+            style={{ cursor: "pointer" }}
             aria-label="show more"
           >
             <ExpandMoreIcon />
@@ -38,7 +38,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
           <CardContent>
             {ingredients.map((ingredient, index) => (
               <Typography paragraph>{ingredient.text}</Typography>
-            ))} 
+            ))}
           </CardContent>
         </Collapse>
       </Card>
