@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import grid from "@mui/material/Grid";
 import SearchIcon from "@mui/icons-material/Search";
 import Grid from "@mui/material/Grid";
+import './App.css';
 
 const App = () => {
   const App_id = "df0b5373";
@@ -61,13 +62,12 @@ const App = () => {
         <div
           style={{
             width: "100%",
-            maxWidth: "30%",
-            margin: "auto",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
-        >
+          className="InputBase"
+          >
           <InputBase
             type="text"
             value={search}
@@ -77,7 +77,7 @@ const App = () => {
             placeholder="Search You Recipes"
             inputProps={{ "aria-label": "search Recipes" }}
           />
-
+              
           <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
             <SearchIcon />
           </IconButton>
