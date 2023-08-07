@@ -48,7 +48,7 @@
 @media (min-width: 321px) and (max-width: 767px) {
   .InputBase {
     width: 100%; 
-    max-width: 50%;
+    max-width: 80%;
     margin: auto;
   }
 }
