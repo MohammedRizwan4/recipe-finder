@@ -15,7 +15,7 @@ const App = () => {
   const [recipe, setRecipe] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
-  const [notfound,setNotfound11] = useState(true)
+  const [notfound, setNotfound11] = useState(true)
 
   useEffect(() => {
     getRecipe();
@@ -29,7 +29,7 @@ const App = () => {
     setRecipe(response?.data?.hits);
     setNotfound11(!notfound)
     console.log(response);
-    if(recipe.length < 1){
+    if (recipe.length < 1) {
       setNotfound11(!notfound);
     }
     console.log(response?.data?.hits[0].recipe.label);
@@ -89,22 +89,23 @@ const App = () => {
         <button type="submit">Search</button>
       </form> */}
 
-      <div style={{margin:"2rem 2rem"}}>
-        <Grid container>
+      <div style={{ margin: "1rem 1rem",display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+        <Grid container spacing={0} >
           {recipe.map((recipee) => (
-            <Grid style={{marginBottom: "2rem"}} item xs={3}>
-              <Recipe
-                title={recipee.recipe.label}
-                key={recipee.recipe.uri}
-                calories={recipee.recipe.calories}
-                image={recipee.recipe.image}
-                ingredients={recipee.recipe.ingredients}
-              />
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <div style={{ margin: "2rem 0" }}>
+                <Recipe
+                  title={recipee.recipe.label}
+                  key={recipee.recipe.uri}
+                  calories={recipee.recipe.calories}
+                  image={recipee.recipe.image}
+                  ingredients={recipee.recipe.ingredients}
+                /></div>
             </Grid>
           ))}
           {
             notfound && "No recipes found"
-          } 
+          }
         </Grid>
       </div>
     </div>

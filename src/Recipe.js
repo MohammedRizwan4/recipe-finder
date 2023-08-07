@@ -18,7 +18,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 345, display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+      <Card sx={{ maxWidth: 345 }}>
         <CardHeader title={title} subheader={`Calories : ${calories.toFixed(2)}`} />
         <CardMedia component="img" height="194" image={image} alt={title} />
 
